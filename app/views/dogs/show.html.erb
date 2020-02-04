@@ -1,5 +1,14 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/800x600/?dog/<%= rand(50) %>);">
-    <div class="container">
-       <h2><%= @dog.name %></h2>
+    <h1> Say Hello to <%=  @dog.name %> </h1>
+
+    <p> The breed is: <%= @dog.breed %> </p>
+
+    <p> A brief Discription of <%=  @dog.name %> is: <%= @dog.bio %></p>
+
+    <p> <%=  @dog.name %> lives at: <%=  @dog.location %> </p>
+
+    <div class="button">
+      <%= link_to "Go back to all the Dawgs" , dogs_path, class: "btn btn-primary btn-sm" %>
     </div>
+
 </div>
