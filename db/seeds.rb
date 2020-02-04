@@ -68,7 +68,6 @@ def getPostcode
   ].sample
 end
 
-
 User.create(name: "Jonas", email: "jonas@gmail.com")
 User.create(name: "Sophie", email: "sophie@gmail.com")
 User.create(name: "Jamie", email: "jamie@gmail.com")
