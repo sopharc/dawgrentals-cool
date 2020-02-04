@@ -1,6 +1,17 @@
-<h1>Dogs#index</h1>
-<p>Find me in app/views/dogs/index.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1555897209-208b67f652c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80);">
+    <div class="container">
+      <h1>Find your new best friend</h1>
+    </div>
+</div>
 
-<h3>This is working!</h3>
-
-<%= render 'search_form' %>
+<div class="dog-cards">
+  <% @dogs.each do |dog| %>
+    <% if dog.photo.attached? %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path dog.photo.key, height: 300, width: 400, crop: :fill %>')">
+    <% else  %>
+       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/800x600/?dog/<%= rand(500) %>);">
+    <% end %>
+    <h2><%= link_to dog.name, dog_path(dog), class: "text" %></h2>
+  </div>
+  <%end%>
+</div>
